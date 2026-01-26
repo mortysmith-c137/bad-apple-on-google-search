@@ -28,6 +28,7 @@ cd bad-apple-on-google-search
 pip install yt-dlp
 yt-dlp --merge-output-format mp4 -o badapple.mp4 https://www.youtube.com/watch?v=FtutLA63Cp8
 ```
+### 3. Import ```badapple-userscript.js``` into ScriptCat.
 
 ## Usage
 
@@ -35,5 +36,4 @@ yt-dlp --merge-output-format mp4 -o badapple.mp4 https://www.youtube.com/watch?v
 ```bash
 python -m http.server 8000
 ```
-### 2. Import ```badapple-userscript.js``` into ScriptCat.
-### 3. Search for "Bad Apple" and click anywhere on the page.
+### 2. Search for "Bad Apple" and click anywhere on the page.
