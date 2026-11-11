@@ -2,30 +2,28 @@
 // @name         bad-apple-on-google-search
 // @namespace    Morty
 // @description  Bad Apple playing directly on the Google Search background.
-// @version      1.1
+// @version      1.2
 // @match        https://www.google.com/search?q=bad+apple*
 // @match        https://www.google.com/search?q=badapple*
 // ==/UserScript==
 
-console.log("BAD APPLE SCRIPT LOADED");
-
-if (
-    !location.href.includes("bad+apple") &&
-    !location.href.includes("badapple")
-) return;
+if (!location.href.includes("bad+apple") &&
+    !location.href.includes("badapple")) return;
 
 const style = document.createElement("style");
+
 style.textContent = `
-* {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-}
-html, body {
-    background: transparent !important;
-}
+    * {
+        background: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+    }
+
+    html, body {
+        background: transparent !important;
+    }
 `;
+
 (document.head || document.documentElement).appendChild(style);
 
 const video = document.createElement("video");
@@ -35,9 +33,7 @@ video.autoplay = true;
 video.loop = true;
 video.muted = false;
 
-document.addEventListener("click", () => {
-    video.play();
-}, { once: true });
+document.addEventListener("click", () => video.play(), { once: true });
 
 Object.assign(video.style, {
     position: "fixed",
